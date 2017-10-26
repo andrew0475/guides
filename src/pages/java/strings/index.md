@@ -36,6 +36,20 @@ You see, the creators of the JVM are pretty smart. They figured that Strings dif
 
 However, whenever you use the `new` keyword, it no longer performs this check. So, there could be a 1000s of String objects with the same content and yet, it'll go ahead and create a new String - using up additional memory. This is precisely why it's a good practice to use `String literals` instead of using the `new` keyword as much as possible.
 
+You can also break a string down into its component characteristics simply by using the String.toCharArray method. For example, this code: 
+```java
+String str = "This is a string.";
+char[] strArray = str.toCharAraay();
+for(int i = 0; i < str.length(); i++) {
+  //print out each character in sequence
+  System.out.print(strArray[i]);
+}
+//print a newline
+System.out.println();
+```
+produces this output:
+`This is a string.`
+
 Extras
 1. String methods use zero-based indexes, except for the second argument of substring().
 2. The String class is final- it's methods can't be overridden.
